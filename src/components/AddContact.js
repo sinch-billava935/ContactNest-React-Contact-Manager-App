@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/AddContact.css";
 
 const AddContact = ({ addContactHandler }) => {
   const navigate = useNavigate();
@@ -30,10 +31,10 @@ const AddContact = ({ addContactHandler }) => {
   };
 
   return (
-    <div className="ui main">
-      <h2>Add Contact</h2>
-      <form className="ui form" onSubmit={handleSubmit}>
-        <div className="field">
+    <div className="add-contact-container">
+      <h2 className="form-title">Add Contact</h2>
+      <form className="add-contact-form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label>Name</label>
           <input
             type="text"
@@ -43,7 +44,7 @@ const AddContact = ({ addContactHandler }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="field">
+        <div className="form-group">
           <label>Email</label>
           <input
             type="email"
@@ -53,7 +54,7 @@ const AddContact = ({ addContactHandler }) => {
             onChange={handleChange}
           />
         </div>
-        <button className="ui button blue">Add</button>
+        <button className="submit-btn">Add</button>
       </form>
     </div>
   );

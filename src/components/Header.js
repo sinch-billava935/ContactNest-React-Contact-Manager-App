@@ -1,12 +1,14 @@
 import React from "react";
+import "../styles/Header.css";
 
 const Header = () => {
   return (
-    <div className="ui menu">
-      <div className="ui container center">
-        <h2>ContactNest</h2>
+    <header className="header-container">
+      <div className="header-inner">
+        <h1 className="header-title">ContactNest</h1>
       </div>
-    </div>
+      <p className="header-subtitle">All your contacts in one nest.</p>
+    </header>
   );
 };
 

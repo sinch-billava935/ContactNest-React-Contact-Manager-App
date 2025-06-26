@@ -1,0 +1,118 @@
+:root {
+  --space-cadet: #2b2d42ff;
+  --cool-gray: #8d99aeff;
+  --antiflash-white: #edf2f4ff;
+  --red-pantone: #ef233cff;
+  --fire-engine-red: #d90429ff;
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background-color: white;
+  border: 1px solid var(--cool-gray);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contact-name {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--space-cadet);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.contact-email {
+  font-size: 14px;
+  color: var(--cool-gray);
+  margin-top: 2px;
+  word-break: break-word;
+  max-width: 220px;
+}
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.action-icon {
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.action-icon:hover {
+  transform: scale(1.2);
+}
+
+.edit-icon {
+  color: green;
+}
+
+.delete-icon {
+  color: red;
+}
+
+/* ✅ Mobile responsiveness */
+@media (max-width: 600px) {
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .contact-details {
+    flex-grow: 1;
+  }
+
+  .contact-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .contact-name,
+  .contact-email {
+    max-width: 100%;
+  }
+}

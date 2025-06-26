@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ContactCard from "./ContactCard";
 import { Link } from "react-router-dom";
+import "../styles/ContactList.css";
 
 const ContactList = ({ contacts, getContactId }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,17 +36,15 @@ const ContactList = ({ contacts, getContactId }) => {
   ));
 
   return (
-    <div className="main">
-      <h2>
-        Contact List
+    <div className="list-container">
+      <h2 className="list-heading">
+        People
         <Link to="/add">
-          <button className="ui button blue right" style={{ float: "right" }}>
-            Add Contact
-          </button>
+          <button className="add-contact-btn">Add Contact</button>
         </Link>
       </h2>
-      <div className="ui search">
-        <div className="ui icon input" style={{ width: "100%" }}>
+      <div className="search-container">
+        <div className="search-input">
           <input
             type="text"
             placeholder="Search Contacts"
@@ -56,11 +55,11 @@ const ContactList = ({ contacts, getContactId }) => {
           <i className="search icon" />
         </div>
       </div>
-      <div className="ui celled list" style={{ marginTop: "20px" }}>
+      <div className="each-contact-list">
         {renderContactList.length > 0 ? (
           renderContactList
         ) : (
-          <p>No contacts found.</p>
+          <p className="no-contact">No contacts found.</p>
         )}
       </div>
     </div>

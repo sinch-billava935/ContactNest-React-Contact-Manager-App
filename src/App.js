@@ -42,10 +42,7 @@ function App() {
   }, [contacts]);
 
   return (
-    <div
-      className="ui container"
-      style={{ marginTop: "50px", maxWidth: "700px" }}
-    >
+    <div className="container">
       <Router>
         <Header />
         <Routes>

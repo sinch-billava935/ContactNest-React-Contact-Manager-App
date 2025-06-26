@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import "../styles/EditContact.css";
 const EditContact = ({ updateContactHandler }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,10 +26,10 @@ const EditContact = ({ updateContactHandler }) => {
   };
 
   return (
-    <div className="ui main">
-      <h2>Edit Contact</h2>
-      <form className="ui form" onSubmit={handleSubmit}>
-        <div className="field">
+    <div className="edit-contact-container">
+      <h2 className="edit-heading">Edit Contact</h2>
+      <form className="edit-form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label>Name</label>
           <input
             name="name"
@@ -39,7 +39,7 @@ const EditContact = ({ updateContactHandler }) => {
             placeholder="Name"
           />
         </div>
-        <div className="field">
+        <div className="form-group">
           <label>Email</label>
           <input
             name="email"
@@ -49,7 +49,7 @@ const EditContact = ({ updateContactHandler }) => {
             placeholder="Email"
           />
         </div>
-        <button className="ui button blue">Update</button>
+        <button className="edit-btn">Update</button>
       </form>
     </div>
   );
